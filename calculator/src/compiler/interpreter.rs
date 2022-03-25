@@ -1,4 +1,4 @@
-use crate::{Compile, Node, Result, ast::Operator};
+use crate::{ast::Operator, Compile, Node, Result};
 
 // ANCHOR: interpreter
 pub struct Interpreter;
@@ -56,6 +56,12 @@ mod tests {
 
     #[test]
     fn basic() {
-        assert_eq!(Interpreter::from_source("1+2").unwrap() as i32, 3)
+        assert_eq!(Interpreter::from_source("1+2").unwrap() as i32, 3);
+        assert_eq!(Interpreter::from_source("2 + (2 - 1)").unwrap() as i32, 3);
+        assert_eq!(Interpreter::from_source("(2 + 3) - 1").unwrap() as i32, 4);
+        assert_eq!(
+            Interpreter::from_source("1 + ((2 + 3) - (2 + 3))").unwrap() as i32,
+            1
+        );
     }
 }
