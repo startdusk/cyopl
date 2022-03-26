@@ -9,3 +9,4 @@ edition = "2021"
 pest = "2.1"
 pest_derive = "2.1"
 anyhow = "1"
+inkwell = { git = "https://github.com/TheDan64/inkwell", branch = "llvm10-0" }  # use branch according to your llvm version
