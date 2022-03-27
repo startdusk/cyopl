@@ -1,10 +1,10 @@
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum Operator {
     Plus,
     Minus,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum Node {
     Int(i32),
     UnaryExpr {

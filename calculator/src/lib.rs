@@ -1,8 +1,9 @@
-pub use crate::ast::Node;
 pub mod compiler;
 
 pub mod ast;
 pub mod parser;
+
+pub use crate::ast::{Node, Operator};
 
 pub type Result<T> = anyhow::Result<T>;
 
