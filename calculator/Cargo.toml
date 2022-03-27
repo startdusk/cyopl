@@ -10,3 +10,22 @@ pest = "2.1"
 pest_derive = "2.1"
 anyhow = "1"
 inkwell = { git = "https://github.com/TheDan64/inkwell", branch = "llvm10-0" }  # use branch according to your llvm version
+rustyline = "9.1.2"
+cfg-if = "1"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+test = false
+
+[[bin]]
+name = "repl"
+test = false
+
+[features]
+jit = []
+interpreter = []
+vm = []
